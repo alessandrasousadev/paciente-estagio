@@ -49,7 +49,6 @@ public class Paciente {
 	
 	public Paciente(@CPF String cpf, @NotBlank String nomeCompleto, @NotNull LocalDate dataNascimento,
 			@NotBlank String celular, String endereco, Sexo sexo, @NotNull Boolean aceitaTermos) {
-		this.idPaciente = UUID.randomUUID();
 		this.cpf = cpf;
 		this.nomeCompleto = nomeCompleto;
 		this.dataNascimento = dataNascimento;
