@@ -58,8 +58,5 @@ public class Paciente {
 		this.aceitaTermos = aceitaTermos;
 		this.dataHoraDoCadastro = LocalDateTime.now();
 	}
-	
 
-	
-	
 }
