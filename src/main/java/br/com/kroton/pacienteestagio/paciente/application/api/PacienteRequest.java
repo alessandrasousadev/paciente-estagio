@@ -2,6 +2,8 @@ package br.com.kroton.pacienteestagio.paciente.application.api;
 
 import java.time.LocalDate;
 
+import org.hibernate.validator.constraints.br.CPF;
+
 import br.com.kroton.pacienteestagio.paciente.domain.Sexo;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -13,6 +15,8 @@ import lombok.Value;
 public class PacienteRequest {
 	@NotBlank
 	private String nomeCompleto;
+	@CPF
+	private String cpf;
 	@NotNull
 	private LocalDate dataNascimento;
 	@NotBlank

@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import org.hibernate.validator.constraints.br.CPF;
 
+import br.com.kroton.pacienteestagio.paciente.application.api.PacienteRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -29,7 +30,6 @@ public class Paciente {
 	@Column(columnDefinition = "uuid", name = "id", updatable = false, unique = true, nullable = false)
 	private UUID idPaciente;
 	@CPF
-	@Column(unique = true)
 	private String cpf;
 	@NotBlank
 	private String nomeCompleto;
@@ -47,15 +47,15 @@ public class Paciente {
 	private LocalDateTime dataHoraDoCadastro;
 	private LocalDateTime dataHoraDaUltimaAlteracao;
 	
-	public Paciente(@CPF String cpf, @NotBlank String nomeCompleto, @NotNull LocalDate dataNascimento,
-			@NotBlank String celular, String endereco, Sexo sexo, @NotNull Boolean aceitaTermos) {
-		this.cpf = cpf;
-		this.nomeCompleto = nomeCompleto;
-		this.dataNascimento = dataNascimento;
-		this.celular = celular;
-		this.endereco = endereco;
-		this.sexo = sexo;
-		this.aceitaTermos = aceitaTermos;
+
+	public Paciente(PacienteRequest pacienteRequest) {
+		this.nomeCompleto = pacienteRequest.getNomeCompleto();
+		this.cpf = pacienteRequest.getCpf();
+		this.dataNascimento = pacienteRequest.getDataNascimento();
+		this.celular = pacienteRequest.getCelular();
+		this.endereco = pacienteRequest.getEndereco();
+		this.sexo = pacienteRequest.getSexo();
+		this.aceitaTermos = pacienteRequest.getAceitaTermos();
 		this.dataHoraDoCadastro = LocalDateTime.now();
 	}
 
