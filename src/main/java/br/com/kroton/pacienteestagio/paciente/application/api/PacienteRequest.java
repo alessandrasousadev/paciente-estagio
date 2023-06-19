@@ -1,5 +1,25 @@
 package br.com.kroton.pacienteestagio.paciente.application.api;
 
-public class PacienteRequest {
+import java.time.LocalDate;
 
+import br.com.kroton.pacienteestagio.paciente.domain.Sexo;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Value;
+
+@Value
+public class PacienteRequest {
+	@NotBlank
+	private String nomeCompleto;
+	@NotNull
+	private LocalDate dataNascimento;
+	@NotBlank
+	private String celular;
+	private String endereco;
+	@Enumerated(EnumType.STRING)
+	private Sexo sexo;
+	@NotNull
+	private Boolean aceitaTermos;
 }
