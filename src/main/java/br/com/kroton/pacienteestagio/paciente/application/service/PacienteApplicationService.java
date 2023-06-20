@@ -1,7 +1,10 @@
 package br.com.kroton.pacienteestagio.paciente.application.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import br.com.kroton.pacienteestagio.paciente.application.api.PacienteListResponse;
 import br.com.kroton.pacienteestagio.paciente.application.api.PacienteRequest;
 import br.com.kroton.pacienteestagio.paciente.application.api.PacienteResponse;
 import br.com.kroton.pacienteestagio.paciente.application.repository.PacienteRepository;
@@ -23,6 +26,13 @@ public class PacienteApplicationService implements PacienteService {
 		return PacienteResponse.builder()
 				.idPaciente(paciente.getIdPaciente())
 				.build();
+	}
+
+	@Override
+	public List<PacienteListResponse> buscaTodosPacientes() {
+		log.info("[inicia] PacienteApplicationService - buscaTodosPacientes");	
+		log.info("[finaliza] PacienteApplicationService - buscaTodosPacientes");
+		return null;
 	}
 
 }

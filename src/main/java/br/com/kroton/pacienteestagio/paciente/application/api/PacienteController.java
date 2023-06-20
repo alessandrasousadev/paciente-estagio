@@ -25,8 +25,9 @@ public class PacienteController implements PacienteAPI {
 	@Override
 	public List<PacienteListResponse> getTodosPacientes() {
 		log.info("[inicia] PacienteController - getTodosPacientes");
+		List<PacienteListResponse> pacientes = pacienteService.buscaTodosPacientes();
 		log.info("[finaliza] PacienteController - getTodosPacientes");
-		return null;
+		return pacientes;
 	}
 
 }
