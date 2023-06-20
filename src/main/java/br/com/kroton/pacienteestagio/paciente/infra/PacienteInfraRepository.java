@@ -24,8 +24,9 @@ public class PacienteInfraRepository implements PacienteRepository {
 	@Override
 	public List<Paciente> buscaTodosPacientes() {
 		log.info("[inicia] PacienteInfraRepository - buscaTodosPacientes");
+		List<Paciente> todosPacientes = pacienteSpringDataJPARepository.findAll();
 		log.info("[finaliza] PacienteInfraRepository - buscaTodosPacientes");
-		return null;
+		return todosPacientes;
 	}
 
 }
