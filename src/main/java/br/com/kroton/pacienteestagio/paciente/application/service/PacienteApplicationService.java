@@ -31,8 +31,9 @@ public class PacienteApplicationService implements PacienteService {
 	@Override
 	public List<PacienteListResponse> buscaTodosPacientes() {
 		log.info("[inicia] PacienteApplicationService - buscaTodosPacientes");	
+		List<Paciente> pacientes = pacienteRepository.buscaTodosPacientes();	
 		log.info("[finaliza] PacienteApplicationService - buscaTodosPacientes");
-		return null;
+		return PacienteListResponse.converte(pacientes);
 	}
 
 }

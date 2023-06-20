@@ -1,7 +1,9 @@
 package br.com.kroton.pacienteestagio.paciente.application.api;
 
+import java.util.List;
 import java.util.UUID;
 
+import br.com.kroton.pacienteestagio.paciente.domain.Paciente;
 import br.com.kroton.pacienteestagio.paciente.domain.Sexo;
 
 public class PacienteListResponse {
@@ -10,7 +12,10 @@ public class PacienteListResponse {
 	private String cpf;
 	private String dataNascimento;
 	private String celular;
-	private String endereco;
 	private Sexo sexo;
+	
+	public static List<PacienteListResponse> converte(List<Paciente> pacientes) {
+		return null;
+	}
 	
 }

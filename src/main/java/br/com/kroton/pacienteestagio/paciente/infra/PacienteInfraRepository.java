@@ -1,5 +1,7 @@
 package br.com.kroton.pacienteestagio.paciente.infra;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import br.com.kroton.pacienteestagio.paciente.application.repository.PacienteRepository;
@@ -18,6 +20,12 @@ public class PacienteInfraRepository implements PacienteRepository {
 		pacienteSpringDataJPARepository.save(paciente);
 		log.info("[finaliza] PacienteInfraRepository - salva");
 		return paciente;
+	}
+	@Override
+	public List<Paciente> buscaTodosPacientes() {
+		log.info("[inicia] PacienteInfraRepository - buscaTodosPacientes");
+		log.info("[finaliza] PacienteInfraRepository - buscaTodosPacientes");
+		return null;
 	}
 
 }
