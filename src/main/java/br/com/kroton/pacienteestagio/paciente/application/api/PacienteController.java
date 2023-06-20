@@ -1,5 +1,7 @@
 package br.com.kroton.pacienteestagio.paciente.application.api;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.kroton.pacienteestagio.paciente.application.service.PacienteService;
@@ -18,6 +20,13 @@ public class PacienteController implements PacienteAPI {
 		PacienteResponse pacienteCriado = pacienteService.criaPaciente(pacienteRequest);
 		log.info("[finaliza] PacienteController - postPaciente");
 		return pacienteCriado;
+	}
+
+	@Override
+	public List<PacienteListResponse> getTodosPacientes() {
+		log.info("[inicia] PacienteController - getTodosPacientes");
+		log.info("[finaliza] PacienteController - getTodosPacientes");
+		return null;
 	}
 
 }
