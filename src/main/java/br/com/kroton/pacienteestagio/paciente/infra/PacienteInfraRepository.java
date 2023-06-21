@@ -1,9 +1,12 @@
 package br.com.kroton.pacienteestagio.paciente.infra;
 
 import java.util.List;
+import java.util.UUID;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
+import br.com.kroton.pacienteestagio.handler.APIException;
 import br.com.kroton.pacienteestagio.paciente.application.repository.PacienteRepository;
 import br.com.kroton.pacienteestagio.paciente.domain.Paciente;
 import lombok.RequiredArgsConstructor;
@@ -27,6 +30,14 @@ public class PacienteInfraRepository implements PacienteRepository {
 		List<Paciente> todosPacientes = pacienteSpringDataJPARepository.findAll();
 		log.info("[finaliza] PacienteInfraRepository - buscaTodosPacientes");
 		return todosPacientes;
+	}
+	@Override
+	public Paciente buscaPacienteAtravesId(UUID idPaciente) {
+		log.info("[inicia] PacienteInfraRepository - buscaPacienteAtravesId");
+		Paciente paciente = pacienteSpringDataJPARepository.findById(idPaciente)
+				.orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Paciente não encontrado!"));
+		log.info("[finaliza] PacienteInfraRepository - buscaPacienteAtravesId");
+		return paciente;
 	}
 
 }

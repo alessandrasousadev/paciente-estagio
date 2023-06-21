@@ -41,8 +41,9 @@ public class PacienteApplicationService implements PacienteService {
 	@Override
 	public PacienteDetalhadoResponse buscaPacienteAtravesId(UUID idPaciente) {
 		log.info("[inicia] PacienteApplicationService - buscaPacienteAtravesId");	
+		Paciente paciente = pacienteRepository.buscaPacienteAtravesId(idPaciente);
 		log.info("[finaliza] PacienteApplicationService - buscaPacienteAtravesId");	
-		return null;
+		return new PacienteDetalhadoResponse(paciente);
 	}
 
 }

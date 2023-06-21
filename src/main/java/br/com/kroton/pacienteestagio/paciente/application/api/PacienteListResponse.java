@@ -11,7 +11,7 @@ import lombok.Value;
 
 @Value
 public class PacienteListResponse {
-	private UUID idCliente;
+	private UUID idPaciente;
 	private String nomeCompleto;
 	private String cpf;
 	private LocalDate dataNascimento;
@@ -25,7 +25,7 @@ public class PacienteListResponse {
 	}
 
 	public PacienteListResponse(Paciente paciente) {
-		this.idCliente = paciente.getIdPaciente();
+		this.idPaciente = paciente.getIdPaciente();
 		this.nomeCompleto = paciente.getNomeCompleto();
 		this.cpf = paciente.getCpf();
 		this.dataNascimento = paciente.getDataNascimento();
