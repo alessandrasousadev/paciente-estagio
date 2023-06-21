@@ -1,9 +1,11 @@
 package br.com.kroton.pacienteestagio.paciente.application.service;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import br.com.kroton.pacienteestagio.paciente.application.api.PacienteDetalhadoResponse;
 import br.com.kroton.pacienteestagio.paciente.application.api.PacienteListResponse;
 import br.com.kroton.pacienteestagio.paciente.application.api.PacienteRequest;
 import br.com.kroton.pacienteestagio.paciente.application.api.PacienteResponse;
@@ -34,6 +36,13 @@ public class PacienteApplicationService implements PacienteService {
 		List<Paciente> pacientes = pacienteRepository.buscaTodosPacientes();	
 		log.info("[finaliza] PacienteApplicationService - buscaTodosPacientes");
 		return PacienteListResponse.converte(pacientes);
+	}
+
+	@Override
+	public PacienteDetalhadoResponse buscaPacienteAtravesId(UUID idPaciente) {
+		log.info("[inicia] PacienteApplicationService - buscaPacienteAtravesId");	
+		log.info("[finaliza] PacienteApplicationService - buscaPacienteAtravesId");	
+		return null;
 	}
 
 }

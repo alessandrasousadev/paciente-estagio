@@ -35,8 +35,9 @@ public class PacienteController implements PacienteAPI {
 	public PacienteDetalhadoResponse getPacienteAtravesId(UUID idPaciente) {
 		log.info("[inicia] PacienteController - getPacienteAtravesId");
 		log.info("[idPaciente] {}", idPaciente);
+		PacienteDetalhadoResponse pacienteDetalhado = pacienteService.buscaPacienteAtravesId(idPaciente);
 		log.info("[finaliza] PacienteController - getPacienteAtravesId");
-		return null;
+		return pacienteDetalhado;
 	}
 
 
