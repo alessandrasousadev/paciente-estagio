@@ -1,6 +1,7 @@
 package br.com.kroton.pacienteestagio.paciente.application.api;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,5 +30,14 @@ public class PacienteController implements PacienteAPI {
 		log.info("[finaliza] PacienteController - getTodosPacientes");
 		return pacientes;
 	}
+
+	@Override
+	public PacienteDetalhadoResponse getPacienteAtravesId(UUID idPaciente) {
+		log.info("[inicia] PacienteController - getPacienteAtravesId");
+		log.info("[idPaciente] {}", idPaciente);
+		log.info("[finaliza] PacienteController - getPacienteAtravesId");
+		return null;
+	}
+
 
 }
