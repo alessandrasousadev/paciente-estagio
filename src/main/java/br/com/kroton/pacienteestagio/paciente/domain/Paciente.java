@@ -30,6 +30,7 @@ public class Paciente {
 	@Column(columnDefinition = "uuid", name = "id", updatable = false, unique = true, nullable = false)
 	private UUID idPaciente;
 	@CPF
+	@Column(unique = true)
 	private String cpf;
 	@NotBlank
 	private String nomeCompleto;
