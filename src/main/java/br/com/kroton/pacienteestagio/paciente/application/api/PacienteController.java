@@ -40,5 +40,13 @@ public class PacienteController implements PacienteAPI {
 		return pacienteDetalhado;
 	}
 
+	@Override
+	public void deletaPacienteAtravesId(UUID idPaciente) {
+		log.info("[inicia] PacienteController - deletaPacienteAtravesId");
+		log.info("[idPaciente] {}", idPaciente);
+		log.info("[finaliza] PacienteController - deletaPacienteAtravesId");
+		
+	}
+
 
 }
