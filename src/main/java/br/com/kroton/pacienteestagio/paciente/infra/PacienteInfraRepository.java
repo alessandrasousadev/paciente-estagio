@@ -3,6 +3,7 @@ package br.com.kroton.pacienteestagio.paciente.infra;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
@@ -20,7 +21,11 @@ public class PacienteInfraRepository implements PacienteRepository {
 	@Override
 	public Paciente salva(Paciente paciente) {
 		log.info("[inicia] PacienteInfraRepository - salva");
-		pacienteSpringDataJPARepository.save(paciente);
+		try {
+			pacienteSpringDataJPARepository.save(paciente);	
+		} catch (DataIntegrityViolationException e) {
+			throw APIException.build(HttpStatus.BAD_REQUEST, "Existem dados duplicados", e);
+		}
 		log.info("[finaliza] PacienteInfraRepository - salva");
 		return paciente;
 	}
