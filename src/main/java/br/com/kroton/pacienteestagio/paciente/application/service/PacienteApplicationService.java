@@ -59,6 +59,9 @@ public class PacienteApplicationService implements PacienteService {
 	@Override
 	public void patchAlteraPaciente(UUID idPaciente, @Valid PacienteAlteracaoRequest pacienteAlteracaoRequest) {
 		log.info("[inicia] PacienteApplicationService - patchAlteraPaciente");	
+		Paciente paciente = pacienteRepository.buscaPacienteAtravesId(idPaciente);
+		paciente.altera(pacienteAlteracaoRequest);
+		pacienteRepository.salva(paciente);
 		log.info("[finaliza] PacienteApplicationService - patchAlteraPaciente");	
 		
 	}

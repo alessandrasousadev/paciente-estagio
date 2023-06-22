@@ -8,12 +8,11 @@ import br.com.kroton.pacienteestagio.paciente.application.api.PacienteDetalhadoR
 import br.com.kroton.pacienteestagio.paciente.application.api.PacienteListResponse;
 import br.com.kroton.pacienteestagio.paciente.application.api.PacienteRequest;
 import br.com.kroton.pacienteestagio.paciente.application.api.PacienteResponse;
-import jakarta.validation.Valid;
 
 public interface PacienteService {
 	PacienteResponse criaPaciente(PacienteRequest pacienteRequest);
 	List<PacienteListResponse> buscaTodosPacientes();
 	PacienteDetalhadoResponse buscaPacienteAtravesId(UUID idPaciente);
 	void deletaPacienteAtravesId(UUID idPaciente);
-	void patchAlteraPaciente(UUID idPaciente, @Valid PacienteAlteracaoRequest pacienteAlteracaoRequest);
+	void patchAlteraPaciente(UUID idPaciente, PacienteAlteracaoRequest pacienteAlteracaoRequest);
 }

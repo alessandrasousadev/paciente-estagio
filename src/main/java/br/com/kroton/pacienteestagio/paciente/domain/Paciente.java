@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import org.hibernate.validator.constraints.br.CPF;
 
+import br.com.kroton.pacienteestagio.paciente.application.api.PacienteAlteracaoRequest;
 import br.com.kroton.pacienteestagio.paciente.application.api.PacienteRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -58,6 +59,18 @@ public class Paciente {
 		this.sexo = pacienteRequest.getSexo();
 		this.aceitaTermos = pacienteRequest.getAceitaTermos();
 		this.dataHoraDoCadastro = LocalDateTime.now();
+	}
+
+
+	public void altera(PacienteAlteracaoRequest pacienteAlteracaoRequest) {
+		this.nomeCompleto = pacienteAlteracaoRequest.getNomeCompleto();
+		this.dataNascimento = pacienteAlteracaoRequest.getDataNascimento();
+		this.celular = pacienteAlteracaoRequest.getCelular();
+		this.endereco = pacienteAlteracaoRequest.getEndereco();
+		this.sexo = pacienteAlteracaoRequest.getSexo();
+		this.aceitaTermos = pacienteAlteracaoRequest.getAceitaTermos();
+		this.dataHoraDaUltimaAlteracao = LocalDateTime.now();
+		
 	}
 
 }
