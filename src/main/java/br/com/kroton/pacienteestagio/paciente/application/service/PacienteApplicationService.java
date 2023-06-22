@@ -5,12 +5,14 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import br.com.kroton.pacienteestagio.paciente.application.api.PacienteAlteracaoRequest;
 import br.com.kroton.pacienteestagio.paciente.application.api.PacienteDetalhadoResponse;
 import br.com.kroton.pacienteestagio.paciente.application.api.PacienteListResponse;
 import br.com.kroton.pacienteestagio.paciente.application.api.PacienteRequest;
 import br.com.kroton.pacienteestagio.paciente.application.api.PacienteResponse;
 import br.com.kroton.pacienteestagio.paciente.application.repository.PacienteRepository;
 import br.com.kroton.pacienteestagio.paciente.domain.Paciente;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -52,5 +54,12 @@ public class PacienteApplicationService implements PacienteService {
 		Paciente paciente = pacienteRepository.buscaPacienteAtravesId(idPaciente);
 		pacienteRepository.deletaPaciente(paciente);
 		log.info("[finaliza] PacienteApplicationService - deletaPacienteAtravesId");			
+	}
+
+	@Override
+	public void patchAlteraPaciente(UUID idPaciente, @Valid PacienteAlteracaoRequest pacienteAlteracaoRequest) {
+		log.info("[inicia] PacienteApplicationService - patchAlteraPaciente");	
+		log.info("[finaliza] PacienteApplicationService - patchAlteraPaciente");	
+		
 	}
 }

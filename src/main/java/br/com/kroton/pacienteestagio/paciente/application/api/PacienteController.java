@@ -54,6 +54,7 @@ public class PacienteController implements PacienteAPI {
 	public void patchAlteraPaciente(UUID idPaciente, @Valid PacienteAlteracaoRequest pacienteAlteracaoRequest) {
 		log.info("[inicia] PacienteController - patchAlteraPaciente");
 		log.info("[idPaciente] {}", idPaciente);
+		pacienteService.patchAlteraPaciente(idPaciente, pacienteAlteracaoRequest);
 		log.info("[finaliza] PacienteController - patchAlteraPaciente");
 	}
 
