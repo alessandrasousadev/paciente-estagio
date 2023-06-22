@@ -46,4 +46,9 @@ public class PacienteApplicationService implements PacienteService {
 		return new PacienteDetalhadoResponse(paciente);
 	}
 
+	@Override
+	public void deletaPacienteAtravesId(UUID idPaciente) {
+		log.info("[inicia] PacienteApplicationService - deletaPacienteAtravesId");	
+		log.info("[finaliza] PacienteApplicationService - deletaPacienteAtravesId");			
+	}
 }

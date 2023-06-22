@@ -44,6 +44,7 @@ public class PacienteController implements PacienteAPI {
 	public void deletaPacienteAtravesId(UUID idPaciente) {
 		log.info("[inicia] PacienteController - deletaPacienteAtravesId");
 		log.info("[idPaciente] {}", idPaciente);
+		pacienteService.deletaPacienteAtravesId(idPaciente);
 		log.info("[finaliza] PacienteController - deletaPacienteAtravesId");
 		
 	}

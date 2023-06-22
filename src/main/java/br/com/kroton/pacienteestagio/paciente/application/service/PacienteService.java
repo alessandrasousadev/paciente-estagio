@@ -12,4 +12,5 @@ public interface PacienteService {
 	PacienteResponse criaPaciente(PacienteRequest pacienteRequest);
 	List<PacienteListResponse> buscaTodosPacientes();
 	PacienteDetalhadoResponse buscaPacienteAtravesId(UUID idPaciente);
+	void deletaPacienteAtravesId(UUID idPaciente);
 }
