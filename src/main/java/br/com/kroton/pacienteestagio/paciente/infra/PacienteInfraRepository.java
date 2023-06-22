@@ -39,5 +39,10 @@ public class PacienteInfraRepository implements PacienteRepository {
 		log.info("[finaliza] PacienteInfraRepository - buscaPacienteAtravesId");
 		return paciente;
 	}
+	@Override
+	public void deletaPaciente(Paciente paciente) {
+		log.info("[inicia] PacienteInfraRepository - deletaPaciente");
+		log.info("[finaliza] PacienteInfraRepository - deletaPaciente");
+	}
 
 }

@@ -49,6 +49,8 @@ public class PacienteApplicationService implements PacienteService {
 	@Override
 	public void deletaPacienteAtravesId(UUID idPaciente) {
 		log.info("[inicia] PacienteApplicationService - deletaPacienteAtravesId");	
+		Paciente paciente = pacienteRepository.buscaPacienteAtravesId(idPaciente);
+		pacienteRepository.deletaPaciente(paciente);
 		log.info("[finaliza] PacienteApplicationService - deletaPacienteAtravesId");			
 	}
 }
