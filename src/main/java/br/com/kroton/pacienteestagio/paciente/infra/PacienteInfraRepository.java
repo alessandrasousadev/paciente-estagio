@@ -42,6 +42,7 @@ public class PacienteInfraRepository implements PacienteRepository {
 	@Override
 	public void deletaPaciente(Paciente paciente) {
 		log.info("[inicia] PacienteInfraRepository - deletaPaciente");
+		pacienteSpringDataJPARepository.delete(paciente);
 		log.info("[finaliza] PacienteInfraRepository - deletaPaciente");
 	}
 
