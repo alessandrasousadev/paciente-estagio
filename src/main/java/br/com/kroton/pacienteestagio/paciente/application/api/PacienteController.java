@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.kroton.pacienteestagio.paciente.application.service.PacienteService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -47,6 +48,13 @@ public class PacienteController implements PacienteAPI {
 		pacienteService.deletaPacienteAtravesId(idPaciente);
 		log.info("[finaliza] PacienteController - deletaPacienteAtravesId");
 		
+	}
+
+	@Override
+	public void patchAlteraPaciente(UUID idPaciente, @Valid PacienteAlteracaoRequest pacienteAlteracaoRequest) {
+		log.info("[inicia] PacienteController - patchAlteraPaciente");
+		log.info("[idPaciente] {}", idPaciente);
+		log.info("[finaliza] PacienteController - patchAlteraPaciente");
 	}
 
 
