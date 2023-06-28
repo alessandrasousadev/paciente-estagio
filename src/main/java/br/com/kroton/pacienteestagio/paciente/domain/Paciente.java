@@ -28,7 +28,7 @@ public class Paciente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(columnDefinition = "uuid", name = "id", updatable = false, unique = true, nullable = false)
+	@Column(columnDefinition = "uuid", name = "idPaciente", updatable = false, unique = true, nullable = false)
 	private UUID idPaciente;
 	@CPF
 	@Column(unique = true)

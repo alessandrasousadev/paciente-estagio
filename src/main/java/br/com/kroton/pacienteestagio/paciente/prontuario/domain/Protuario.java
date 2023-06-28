@@ -4,8 +4,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import org.hibernate.validator.constraints.br.CPF;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -27,22 +25,41 @@ public class Protuario {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(columnDefinition = "uuid", name = "idProntuario", updatable = false, unique = true, nullable = false)
 	private UUID idProntuario;
-	@CPF
-	@Column(unique = true)
-	private String cpfPaciente;
+	@NotNull
+	@Column(columnDefinition = "uuid", name = "idPacienteTitular",  nullable = false)
+	private UUID idPacienteTitular;
 	@NotBlank
-	private String nomeCompleto;
+	private String nomeCompletoPaciente;
 	@NotNull
 	private String objetivoDaConsulta;
-	private AnamnesePaciente anamnesePaciente;
 	@Enumerated(EnumType.STRING )
 	private RitmoIntestinal ritmoIntestinal; 
 	@NotNull
 	private LocalDate dataDaConsulta;
 	@NotNull
 	private LocalDate dataDoRetorno;
-	
+	@NotNull
+	private Boolean alergiaAlimentar;
+	@NotNull
+	private Boolean usoDeMedicamento;
+	@NotBlank
+	private String qualMedicamento;
+	@NotNull
+	private Boolean intoleranciaLactose;
+	@NotNull
+	private Boolean alergiaProteinaDoLeite;
+	@NotNull
+	private Boolean gastrite;
+	@NotNull
+	private Boolean diabetes;
+	@NotNull
+	private Boolean hipertensao;
+	@NotNull
+	private Boolean gestante;
+	@NotNull
+	private Boolean praticaExerciciosFisico;
+	@NotBlank
+	private String dadosClinicos;
 	private LocalDateTime dataHoraDoCadastro;
 	private LocalDateTime dataHoraDaUltimaAlteracao;
-	
 }
