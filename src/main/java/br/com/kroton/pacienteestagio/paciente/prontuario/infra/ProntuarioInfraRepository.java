@@ -25,8 +25,9 @@ public class ProntuarioInfraRepository implements ProntuarioRepository {
 	@Override
 	public List<Prontuario> buscaTodosProntuariosDoPacienteComId(UUID idPaciente) {
 		log.info("[inicia] ProntuarioInfraRepository - buscaTodosProntuariosDoPacienteComId");
+		var prontuarios = prontuarioSpringDataJPARepository.findByIdPacienteTitular(idPaciente);
 		log.info("[finaliza] ProntuarioInfraRepository - buscaTodosProntuariosDoPacienteComId");
-		return null;
+		return prontuarios;
 	}
 
 }
