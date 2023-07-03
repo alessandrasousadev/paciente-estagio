@@ -43,7 +43,9 @@ public class ProntuarioApplicationService implements ProntuarioService {
 	@Override
 	public ProntuarioPacienteDetalhadoResponse buscaProntuarioDoPaciente(UUID idPaciente, UUID idProntuario) {
 		log.info("[inicia] ProntuarioApplicationService - buscaProntuarioDoPaciente");
+		pacienteService.buscaPacienteAtravesId(idPaciente);
+		Prontuario prontuario = prontuarioRepository.buscaProntuarioPeloId(idProntuario);
 		log.info("[finaliza] ProntuarioApplicationService - buscaProntuarioDoPaciente");
-		return null;
+		return new ProntuarioPacienteDetalhadoResponse(prontuario);
 	}
 }

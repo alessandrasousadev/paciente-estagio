@@ -8,4 +8,5 @@ import br.com.kroton.pacienteestagio.paciente.prontuario.domain.Prontuario;
 public interface ProntuarioRepository {
 	Prontuario salvaProntuario(Prontuario prontuario);
 	List<Prontuario> buscaTodosProntuariosDoPacienteComId(UUID idPaciente);
+	Prontuario buscaProntuarioPeloId(UUID idProntuario);
 }
