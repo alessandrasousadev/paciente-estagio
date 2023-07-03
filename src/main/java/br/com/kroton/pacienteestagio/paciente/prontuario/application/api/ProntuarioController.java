@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.kroton.pacienteestagio.paciente.application.api.PacienteListResponse;
 import br.com.kroton.pacienteestagio.paciente.prontuario.application.service.ProntuarioService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -29,8 +30,9 @@ public class ProntuarioController implements ProntuarioAPI {
 	public List<ProntuarioPacienteListResponse> getProntuariosDoPacienteComId(UUID idPaciente) {
 		log.info("[inicia] ProntuarioController - getProntuariosDoPacienteComId");
 		log.info("[idPaciente] {}", idPaciente);
+		List<ProntuarioPacienteListResponse> prontuariosDoPaciente = prontuarioService.buscaTodosProntuariosDoPacienteComId(idPaciente);
 		log.info("[finaliza] ProntuarioController - getProntuariosDoPacienteComId");
-		return null;
+		return prontuariosDoPaciente;
 	}
 
 }
