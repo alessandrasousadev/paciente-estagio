@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import br.com.kroton.pacienteestagio.paciente.application.service.PacienteService;
+import br.com.kroton.pacienteestagio.paciente.prontuario.application.api.ProntuarioPacienteDetalhadoResponse;
 import br.com.kroton.pacienteestagio.paciente.prontuario.application.api.ProntuarioPacienteListResponse;
 import br.com.kroton.pacienteestagio.paciente.prontuario.application.api.ProntuarioRequest;
 import br.com.kroton.pacienteestagio.paciente.prontuario.application.api.ProntuarioResponse;
@@ -37,5 +38,12 @@ public class ProntuarioApplicationService implements ProntuarioService {
 		List<Prontuario> prontuarioDoPaciente = prontuarioRepository.buscaTodosProntuariosDoPacienteComId(idPaciente);
 		log.info("[finaliza] ProntuarioApplicationService - buscaTodosProntuariosDoPacienteComId");
 		return ProntuarioPacienteListResponse.converte(prontuarioDoPaciente);
+	}
+
+	@Override
+	public ProntuarioPacienteDetalhadoResponse buscaProntuarioDoPaciente(UUID idPaciente, UUID idProntuario) {
+		log.info("[inicia] ProntuarioApplicationService - buscaProntuarioDoPaciente");
+		log.info("[finaliza] ProntuarioApplicationService - buscaProntuarioDoPaciente");
+		return null;
 	}
 }
