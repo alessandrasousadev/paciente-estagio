@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.kroton.pacienteestagio.paciente.application.api.PacienteDetalhadoResponse;
 import br.com.kroton.pacienteestagio.paciente.application.api.PacienteListResponse;
 import jakarta.validation.Valid;
 
@@ -26,5 +27,9 @@ public interface ProntuarioAPI {
 	@GetMapping
 	@ResponseStatus(code = HttpStatus.OK)
 	List<ProntuarioPacienteListResponse> getProntuariosDoPacienteComId(@PathVariable UUID idPaciente);
+	
+	@GetMapping(value = "/{idProntuario}")
+	@ResponseStatus(code = HttpStatus.OK)
+	ProntuarioPacienteDetalhadoResponse getProntuarioPaciente(@PathVariable UUID idPaciente, @PathVariable UUID idProntuario);
 	
 }

@@ -34,4 +34,12 @@ public class ProntuarioController implements ProntuarioAPI {
 		log.info("[finaliza] ProntuarioController - getProntuariosDoPacienteComId");
 		return prontuariosDoPaciente;
 	}
+
+	@Override
+	public ProntuarioPacienteDetalhadoResponse getProntuarioPaciente(UUID idPaciente, UUID idProntuario) {
+		log.info("[inicia] ProntuarioController - getProntuarioPaciente");
+		log.info("[idPaciente] {} - [idProntuario] {}", idPaciente, idProntuario);
+		log.info("[finaliza] ProntuarioController - getProntuarioPaciente");
+		return null;
+	}
 }
