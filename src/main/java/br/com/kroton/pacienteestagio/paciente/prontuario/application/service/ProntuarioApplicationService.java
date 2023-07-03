@@ -34,8 +34,9 @@ public class ProntuarioApplicationService implements ProntuarioService {
 	public List<ProntuarioPacienteListResponse> buscaTodosProntuariosDoPacienteComId(UUID idPaciente) {
 		log.info("[inicia] ProntuarioApplicationService - buscaTodosProntuariosDoPacienteComId");
 		pacienteService.buscaPacienteAtravesId(idPaciente);
+		List<Prontuario> prontuarioDoPaciente = prontuarioRepository.buscaTodosProntuariosDoPacienteComId(idPaciente);
 		log.info("[finaliza] ProntuarioApplicationService - buscaTodosProntuariosDoPacienteComId");
-		return null;
+		return ProntuarioPacienteListResponse.converte(prontuarioDoPaciente);
 	}
 
 }

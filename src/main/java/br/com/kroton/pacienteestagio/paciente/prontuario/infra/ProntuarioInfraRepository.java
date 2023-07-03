@@ -1,5 +1,8 @@
 package br.com.kroton.pacienteestagio.paciente.prontuario.infra;
 
+import java.util.List;
+import java.util.UUID;
+
 import org.springframework.stereotype.Repository;
 
 import br.com.kroton.pacienteestagio.paciente.prontuario.application.service.ProntuarioRepository;
@@ -18,6 +21,12 @@ public class ProntuarioInfraRepository implements ProntuarioRepository {
 		prontuarioSpringDataJPARepository.save(prontuario);
 		log.info("[finaliza] ProntuarioInfraRepository - salvaProntuario");
 		return prontuario;
+	}
+	@Override
+	public List<Prontuario> buscaTodosProntuariosDoPacienteComId(UUID idPaciente) {
+		log.info("[inicia] ProntuarioInfraRepository - buscaTodosProntuariosDoPacienteComId");
+		log.info("[finaliza] ProntuarioInfraRepository - buscaTodosProntuariosDoPacienteComId");
+		return null;
 	}
 
 }
