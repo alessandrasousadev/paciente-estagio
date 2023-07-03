@@ -38,5 +38,4 @@ public class ProntuarioApplicationService implements ProntuarioService {
 		log.info("[finaliza] ProntuarioApplicationService - buscaTodosProntuariosDoPacienteComId");
 		return ProntuarioPacienteListResponse.converte(prontuarioDoPaciente);
 	}
-
 }

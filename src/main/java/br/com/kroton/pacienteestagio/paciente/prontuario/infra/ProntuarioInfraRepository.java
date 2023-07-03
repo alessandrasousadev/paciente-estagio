@@ -29,5 +29,4 @@ public class ProntuarioInfraRepository implements ProntuarioRepository {
 		log.info("[finaliza] ProntuarioInfraRepository - buscaTodosProntuariosDoPacienteComId");
 		return prontuarios;
 	}
-
 }

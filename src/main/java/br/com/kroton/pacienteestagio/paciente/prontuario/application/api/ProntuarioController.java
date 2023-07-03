@@ -34,5 +34,4 @@ public class ProntuarioController implements ProntuarioAPI {
 		log.info("[finaliza] ProntuarioController - getProntuariosDoPacienteComId");
 		return prontuariosDoPaciente;
 	}
-
 }
