@@ -48,4 +48,11 @@ public class ProntuarioApplicationService implements ProntuarioService {
 		log.info("[finaliza] ProntuarioApplicationService - buscaProntuarioDoPaciente");
 		return new ProntuarioPacienteDetalhadoResponse(prontuario);
 	}
+
+	@Override
+	public void deletaProntuarioDoPacienteComId(UUID idPaciente, UUID idProntuario) {
+		log.info("[inicia] ProntuarioApplicationService - deletaProntuarioDoPacienteComId");
+		log.info("[finaliza] ProntuarioApplicationService - deletaProntuarioDoPacienteComId");
+		
+	}
 }

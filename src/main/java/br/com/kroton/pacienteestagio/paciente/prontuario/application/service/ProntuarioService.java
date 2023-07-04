@@ -13,4 +13,5 @@ public interface ProntuarioService {
 	ProntuarioResponse criaProntuario(UUID idPaciente, @Valid ProntuarioRequest prontuarioRequest);
 	List<ProntuarioPacienteListResponse> buscaTodosProntuariosDoPacienteComId(UUID idPaciente);
 	ProntuarioPacienteDetalhadoResponse buscaProntuarioDoPaciente(UUID idPaciente, UUID idProntuario);
+	void deletaProntuarioDoPacienteComId(UUID idPaciente, UUID idProntuario);
 }

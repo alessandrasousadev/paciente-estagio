@@ -43,4 +43,13 @@ public class ProntuarioController implements ProntuarioAPI {
 		log.info("[finaliza] ProntuarioController - getProntuarioPaciente");
 		return prontuario;
 	}
+
+	@Override
+	public void deletaProntuarioAtravesId(UUID idPaciente, UUID idProntuario) {
+		log.info("[inicia] ProntuarioController - deletaProntuarioAtravesId");
+		log.info("[idPaciente] {} - [idProntuario] {}", idPaciente, idProntuario);
+		prontuarioService.deletaProntuarioDoPacienteComId(idPaciente, idProntuario);
+		log.info("[finaliza] ProntuarioController - deletaProntuarioAtravesId");
+		
+	}
 }
