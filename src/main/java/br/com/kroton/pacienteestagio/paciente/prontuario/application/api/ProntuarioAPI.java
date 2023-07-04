@@ -41,7 +41,7 @@ public interface ProntuarioAPI {
 	
 	@PatchMapping(value = "/{idProntuario}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	ProntuarioResponse patchProntuario(@PathVariable UUID idPaciente, @PathVariable UUID idProntuario, 
+	void patchProntuario(@PathVariable UUID idPaciente, @PathVariable UUID idProntuario, 
 			@Valid @RequestBody ProntuarioAlteracaoRequest prontuarioAlteracaoRequest);
 	
 }

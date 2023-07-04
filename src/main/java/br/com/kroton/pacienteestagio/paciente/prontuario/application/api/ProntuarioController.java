@@ -54,12 +54,11 @@ public class ProntuarioController implements ProntuarioAPI {
 	}
 
 	@Override
-	public ProntuarioResponse patchProntuario(UUID idPaciente, UUID idProntuario,
+	public void patchProntuario(UUID idPaciente, UUID idProntuario,
 			@Valid ProntuarioAlteracaoRequest prontuarioAlteracaoRequest) {
 		log.info("[inicia] ProntuarioController - patchProntuario");
 		log.info("[idPaciente] {} - [idProntuario] {}", idPaciente, idProntuario);
 		log.info("[finaliza] ProntuarioController - patchProntuario");
-		return null;
 	}
 
 
