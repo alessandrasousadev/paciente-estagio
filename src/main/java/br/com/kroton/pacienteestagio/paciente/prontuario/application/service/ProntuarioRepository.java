@@ -9,4 +9,5 @@ public interface ProntuarioRepository {
 	Prontuario salvaProntuario(Prontuario prontuario);
 	List<Prontuario> buscaTodosProntuariosDoPacienteComId(UUID idPaciente);
 	Prontuario buscaProntuarioPeloId(UUID idProntuario);
+	void deletaProntuario(Prontuario prontuario);
 }

@@ -52,6 +52,9 @@ public class ProntuarioApplicationService implements ProntuarioService {
 	@Override
 	public void deletaProntuarioDoPacienteComId(UUID idPaciente, UUID idProntuario) {
 		log.info("[inicia] ProntuarioApplicationService - deletaProntuarioDoPacienteComId");
+		pacienteService.buscaPacienteAtravesId(idPaciente);
+		Prontuario prontuario = prontuarioRepository.buscaProntuarioPeloId(idProntuario);
+		prontuarioRepository.deletaProntuario(prontuario);
 		log.info("[finaliza] ProntuarioApplicationService - deletaProntuarioDoPacienteComId");
 		
 	}

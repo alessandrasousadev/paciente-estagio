@@ -35,8 +35,14 @@ public class ProntuarioInfraRepository implements ProntuarioRepository {
 	public Prontuario buscaProntuarioPeloId(UUID idProntuario) {
 		log.info("[inicia] ProntuarioInfraRepository - buscaProntuarioPeloId");
 		var prontuario = prontuarioSpringDataJPARepository.findById(idProntuario)
-				.orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Prontuario não encontrado para o idProntuario =" + idProntuario));
+				.orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Prontuario não encontrado para o idProntuario = " + idProntuario));
 		log.info("[finaliza] ProntuarioInfraRepository - buscaProntuarioPeloId");
 		return prontuario;
+	}
+	@Override
+	public void deletaProntuario(Prontuario prontuario) {
+		log.info("[inicia] ProntuarioInfraRepository - deletaProntuario");
+		prontuarioSpringDataJPARepository.delete(prontuario);
+		log.info("[finaliza] ProntuarioInfraRepository - deletaProntuario");
 	}
 }
