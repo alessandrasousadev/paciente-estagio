@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import br.com.kroton.pacienteestagio.paciente.application.service.PacienteService;
+import br.com.kroton.pacienteestagio.paciente.prontuario.application.api.ProntuarioAlteracaoRequest;
 import br.com.kroton.pacienteestagio.paciente.prontuario.application.api.ProntuarioPacienteDetalhadoResponse;
 import br.com.kroton.pacienteestagio.paciente.prontuario.application.api.ProntuarioPacienteListResponse;
 import br.com.kroton.pacienteestagio.paciente.prontuario.application.api.ProntuarioRequest;
@@ -57,5 +58,16 @@ public class ProntuarioApplicationService implements ProntuarioService {
 		prontuarioRepository.deletaProntuario(prontuario);
 		log.info("[finaliza] ProntuarioApplicationService - deletaProntuarioDoPacienteComId");
 		
+	}
+
+	@Override
+	public void alteraProntuarioDoPacienteComId(UUID idPaciente, UUID idProntuario,
+			ProntuarioAlteracaoRequest prontuarioAlteracaoRequest) {
+		log.info("[inicia] ProntuarioApplicationService - alteraProntuarioDoPacienteComId");
+		pacienteService.buscaPacienteAtravesId(idPaciente);
+		Prontuario prontuario = prontuarioRepository.buscaProntuarioPeloId(idProntuario);
+		prontuario.altera(prontuarioAlteracaoRequest);
+		prontuarioRepository.salvaProntuario(prontuario);
+		log.info("[finaliza] ProntuarioApplicationService - alteraProntuarioDoPacienteComId");
 	}
 }

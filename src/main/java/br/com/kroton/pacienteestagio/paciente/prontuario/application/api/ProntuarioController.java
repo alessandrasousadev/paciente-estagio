@@ -58,8 +58,7 @@ public class ProntuarioController implements ProntuarioAPI {
 			@Valid ProntuarioAlteracaoRequest prontuarioAlteracaoRequest) {
 		log.info("[inicia] ProntuarioController - patchProntuario");
 		log.info("[idPaciente] {} - [idProntuario] {}", idPaciente, idProntuario);
+		prontuarioService.alteraProntuarioDoPacienteComId(idPaciente, idProntuario, prontuarioAlteracaoRequest);
 		log.info("[finaliza] ProntuarioController - patchProntuario");
 	}
-
-
 }

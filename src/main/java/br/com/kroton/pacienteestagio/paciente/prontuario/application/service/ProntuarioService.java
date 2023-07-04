@@ -3,6 +3,7 @@ package br.com.kroton.pacienteestagio.paciente.prontuario.application.service;
 import java.util.List;
 import java.util.UUID;
 
+import br.com.kroton.pacienteestagio.paciente.prontuario.application.api.ProntuarioAlteracaoRequest;
 import br.com.kroton.pacienteestagio.paciente.prontuario.application.api.ProntuarioPacienteDetalhadoResponse;
 import br.com.kroton.pacienteestagio.paciente.prontuario.application.api.ProntuarioPacienteListResponse;
 import br.com.kroton.pacienteestagio.paciente.prontuario.application.api.ProntuarioRequest;
@@ -14,4 +15,5 @@ public interface ProntuarioService {
 	List<ProntuarioPacienteListResponse> buscaTodosProntuariosDoPacienteComId(UUID idPaciente);
 	ProntuarioPacienteDetalhadoResponse buscaProntuarioDoPaciente(UUID idPaciente, UUID idProntuario);
 	void deletaProntuarioDoPacienteComId(UUID idPaciente, UUID idProntuario);
+	void alteraProntuarioDoPacienteComId(UUID idPaciente, UUID idProntuario, ProntuarioAlteracaoRequest prontuarioAlteracaoRequest);
 }

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import br.com.kroton.pacienteestagio.paciente.prontuario.application.api.ProntuarioAlteracaoRequest;
 import br.com.kroton.pacienteestagio.paciente.prontuario.application.api.ProntuarioRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -85,6 +86,26 @@ public class Prontuario {
 		this.dataDaConsulta = prontuarioRequest.getDataDaConsulta();
 		this.dataDoRetorno = prontuarioRequest.getDataDoRetorno();
 		this.dataHoraDoCadastro = LocalDateTime.now();
+	}
+
+	public void altera(ProntuarioAlteracaoRequest prontuarioAlteracaoRequest) {
+		this.nomeCompletoPaciente = prontuarioAlteracaoRequest.getNomeCompletoPaciente();
+		this.objetivoDaConsulta = prontuarioAlteracaoRequest.getObjetivoDaConsulta();
+		this.ritmoIntestinal = prontuarioAlteracaoRequest.getRitmoIntestinal();
+		this.alergiaAlimentar = prontuarioAlteracaoRequest.getAlergiaAlimentar();
+		this.usoDeMedicamento = prontuarioAlteracaoRequest.getUsoDeMedicamento();
+		this.qualMedicamento = prontuarioAlteracaoRequest.getQualMedicamento();
+		this.intoleranciaLactose = prontuarioAlteracaoRequest.getIntoleranciaLactose();
+		this.alergiaProteinaDoLeite = prontuarioAlteracaoRequest.getAlergiaProteinaDoLeite();
+		this.gastrite = prontuarioAlteracaoRequest.getGastrite();
+		this.diabetes = prontuarioAlteracaoRequest.getDiabetes();
+		this.hipertensao = prontuarioAlteracaoRequest.getHipertensao();
+		this.gestante = prontuarioAlteracaoRequest.getGestante();
+		this.praticaExerciciosFisico = prontuarioAlteracaoRequest.getPraticaExerciciosFisico();
+		this.dadosClinicos = prontuarioAlteracaoRequest.getDadosClinicos();
+		this.dataDaConsulta = prontuarioAlteracaoRequest.getDataDaConsulta();
+		this.dataDoRetorno = prontuarioAlteracaoRequest.getDataDoRetorno();
+		this.dataHoraDaUltimaAlteracao = LocalDateTime.now();
 	}
 
 	
